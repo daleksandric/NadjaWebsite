@@ -1,0 +1,68 @@
+/* =================== General CSS ================================================================== */
+body {
+    padding-top: 0px;
+}
+
+.section-setup {
+    text-align: center;
+    width: 100%;
+}
+
+.image-size {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15%;
+    left: 15%;    
+}
+
+/* ================ Customization - Getting Married ================================================== */
+
+.getting-married {
+    height: 95vh;
+}
+
+.getting-married img {
+    opacity: 0.75;
+}
+
+.getting-married, h1 h3 {
+    color: #fff;
+}
+
+/* ================ Customization - Our Story ========================================================= */
+
+.our-story {
+    padding: 150px 0 150px 0;
+}
+
+/* ================ Customization - Save Date ========================================================= */
+
+.save-the-date {
+    position: relative;
+    height: 70vh;
+}
+
+.save-the-date, h1 h3 {
+    color: #fff;
+}
+
+/* ================ Customization - Wedding Details =================================================== */
+
+/* ================ Customization - Accomodations ===================================================== */
+
+.accomodations {
+    background-color: pink;
+}
+
+/* ================ Customization - Photo Gallery ===================================================== */
+
+/* ================ Customization - Registry ========================================================== */
+
+/* ================ Customization - RSVP ============================================================== */
