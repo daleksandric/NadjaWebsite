@@ -11,6 +11,8 @@ $(document).on('click', '[data-toggle="lightbox"]',
   }
 );
 
+/* -----------------Smooth Scroll Code-------------- */
+
 // Select all links with hashes
 $(document).ready(function () {
   $('a[href*="#"]')
@@ -48,6 +50,36 @@ $(document).ready(function () {
         }
       }
     });
-
-    
 })
+
+function sendEmail() {
+
+  let templateParams = readInput();
+
+  emailjs.send('gmail', 'template_wb4zzh5Z', templateParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        clearInput();
+      }, function(error) {
+        console.log('FAILED...', error);
+      });
+}
+
+function readInput() {
+  let name = $('#name').val();
+  let numberOfGuests = $('#number').val();
+  let comment = $('#comment').val();
+
+  return {
+    who_replied: name,
+    number_of_guests: numberOfGuests, 
+    comment: comment
+  };
+}
+
+function clearInput() {
+  $('#name').val('');
+  $('#number').val('');
+  $('#comment').val('');
+
+}

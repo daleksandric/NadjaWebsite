@@ -23,6 +23,26 @@ hr {
     width: 100%;
 }
 
+.with-image {
+    position: relative;
+    height: 70vh;
+}
+
+.with-image h1 {
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-size: 50px;
+}
+
+.with-image h4 {
+    color: #fff;
+}
+
+.with-image img {
+    filter: brightness(80%);
+}
+
 .section-padding {
     padding: 150px 0 150px 0;
 }
@@ -78,21 +98,8 @@ hr {
     color: salmon;
 }
 
-
 /* ================ Customization - Save Date ========================================================= */
 
-.save-the-date {
-    position: relative;
-    height: 70vh;
-}
-
-.save-the-date, h1 h3 {
-    color: #fff;
-}
-
-.save-the-date img {
-    filter: brightness(80%);
-}
 
 /* ================ Customization - Wedding Details =================================================== */
 
@@ -101,8 +108,9 @@ hr {
 }
 
 .party-location {
-    padding-top: 50px;
+    padding-top: 25px;
 }
+
 /* ================ Customization - Accomodations ===================================================== */
 
 .accomodations {
