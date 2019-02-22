@@ -1,11 +1,30 @@
 /* =================== General CSS ================================================================== */
+/*
+html {
+    scroll-behavior: smooth;
+}
+*/
 body {
     padding-top: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    width: 40%;
 }
 
 .section-setup {
     text-align: center;
     width: 100%;
+}
+
+.section-padding {
+    padding: 150px 0 150px 0;
 }
 
 .image-size {
@@ -22,6 +41,15 @@ body {
     left: 15%;    
 }
 
+.section-subtitle {
+    color: salmon;
+}
+
+/* ================ Bootstrup overrides ============================================================== */
+.row {
+    margin-left: 0px;
+    margin-right: 0PX;
+}
 /* ================ Customization - Getting Married ================================================== */
 
 .getting-married {
@@ -29,18 +57,27 @@ body {
 }
 
 .getting-married img {
-    opacity: 0.75;
+    filter: brightness(80%);
 }
 
-.getting-married, h1 h3 {
+.getting-married-text {
     color: #fff;
+}
+
+.rsvp {
+    padding-right: 0px;
+}
+
+.rsvp-fade {
+    transition: opacity .15s linear;
 }
 
 /* ================ Customization - Our Story ========================================================= */
 
-.our-story {
-    padding: 150px 0 150px 0;
+.our-story h3 {
+    color: salmon;
 }
+
 
 /* ================ Customization - Save Date ========================================================= */
 
@@ -53,16 +90,100 @@ body {
     color: #fff;
 }
 
+.save-the-date img {
+    filter: brightness(80%);
+}
+
 /* ================ Customization - Wedding Details =================================================== */
 
+.wedding-details h2 {
+    color: salmon;
+}
+
+.party-location {
+    padding-top: 50px;
+}
 /* ================ Customization - Accomodations ===================================================== */
 
 .accomodations {
-    background-color: pink;
+    background-color: #faebe3;
 }
 
 /* ================ Customization - Photo Gallery ===================================================== */
 
+
 /* ================ Customization - Registry ========================================================== */
 
+.registry {
+    background-color: #faebe3;
+}
+
 /* ================ Customization - RSVP ============================================================== */
+
+  p.line {
+    margin: 0px auto 20px auto;
+    color: #999;
+  }
+
+  .info > h1, h2, p {
+    text-align: center;
+    padding: 0px;
+    margin: 5px 5px;
+  }
+  
+  .info h2 {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 100;
+  }
+
+  .last-form-group {
+      margin-bottom: 0px;
+  }
+
+/* Media Query */
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1rem; 
+    }
+
+    .form h1 {
+        font-size: 1rem;
+    }
+
+    .form {
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+}
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
