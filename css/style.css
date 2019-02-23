@@ -65,6 +65,10 @@ hr {
     color: salmon;
 }
 
+.RSVP-color {
+    background: #82a28f !important;
+}
+
 /* ================ Bootstrup overrides ============================================================== */
 .row {
     margin-left: 0px;
@@ -95,7 +99,7 @@ hr {
 /* ================ Customization - Our Story ========================================================= */
 
 .our-story h3 {
-    color: salmon;
+    color: #82a28f;
 }
 
 /* ================ Customization - Save Date ========================================================= */
@@ -104,26 +108,33 @@ hr {
 /* ================ Customization - Wedding Details =================================================== */
 
 .wedding-details h2 {
-    color: salmon;
+    color: #82a28f;
 }
 
 .party-location {
     padding-top: 25px;
 }
 
-/* ================ Customization - Accomodations ===================================================== */
+/* ================ Customization - The Place ===================================================== */
 
-.accomodations {
-    background-color: #faebe3;
+#accomodations img {
+    filter: brightness(55%);
 }
 
+.accomodations p {
+    color: #fff;
+}
 /* ================ Customization - Photo Gallery ===================================================== */
 
+.gallery > div {
+    background-image: url('../images/backgrounds/rose-elena-501361-unsplash.jpg');
+    background-size: cover;
+}
 
 /* ================ Customization - Registry ========================================================== */
 
 .registry {
-    background-color: #faebe3;
+    background-color: #82a28f;
 }
 
 /* ================ Customization - RSVP ============================================================== */
@@ -146,6 +157,11 @@ hr {
 
   .last-form-group {
       margin-bottom: 0px;
+  }
+
+  .name-btn{
+    background-color: #82a28f;
+    border: none;
   }
 
 /* Media Query */

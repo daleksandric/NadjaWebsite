@@ -52,34 +52,94 @@ $(document).ready(function () {
     });
 })
 
+var numberOfGuests = 0;
 function sendEmail() {
 
-  let templateParams = readInput();
+  let inputValues = readInput();
+  if(inputValues.namesOfGuests[0].length > 0) {
+    let templateParams = getEmailParameters(inputValues);
 
-  emailjs.send('gmail', 'template_wb4zzh5Z', templateParams)
-      .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        clearInput();
-      }, function(error) {
-        console.log('FAILED...', error);
-      });
+    emailjs.send('gmail', 'template_wb4zzh5Z', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          clearInput();
+        }, function(error) {
+          console.log('FAILED...', error);
+        });
+  }
+}
+
+function getEmailParameters(inputValues) {
+  let namesOfGuests = inputValues.namesOfGuests;
+  let subjectText = `RSVP from ${namesOfGuests[0]}`;
+  let bodyText = `Dear Nadja,<br>
+  <br>
+  I have decided to RSVP. My name is ${namesOfGuests[0]}.<br>
+  <br>
+  `;
+
+  if(numberOfGuests > 1) {
+    bodyText += `I'm bringing ${numberOfGuests} guests with me:`;
+
+    for (i=1; i<=numberOfGuests; i++) {
+      if(namesOfGuests[i].length > 0) {
+        bodyText += `<div style='margin-left:25px;'>${namesOfGuests[i]}</div>`;
+      }
+    }
+  }
+
+  if(comment !== null && comment.length > 0) {
+    bodyText += `<br>Additional comments:<br>
+        <i>${inputValues.comment}</i><br><br>`
+    ;
+  }
+
+  bodyText += `<br>Sincerely,<br><br>
+    ${namesOfGuests[0]}<br>
+  `;
+
+  return {
+    subject: subjectText,
+    body: bodyText
+  }
 }
 
 function readInput() {
-  let name = $('#name').val();
-  let numberOfGuests = $('#number').val();
+  let namesOfGuests = [];
+
+  $('.guest').each(function() {
+    namesOfGuests.push($(this).val())
+  });
   let comment = $('#comment').val();
 
   return {
-    who_replied: name,
-    number_of_guests: numberOfGuests, 
+    namesOfGuests: namesOfGuests,
     comment: comment
   };
 }
 
 function clearInput() {
-  $('#name').val('');
-  $('#number').val('');
+  numberOfGuests = 0;
   $('#comment').val('');
+
+  let initialGuestHtml = `
+    <div class="form-group row">
+      <input id="name0" type="text" class="form-control col-10 mr-1 guest" placeholder="Name">
+      <div class="btn btn-primary col-1 name-btn" onclick="javascript:addNameInput()"><span class="fas fa-user-plus"></span></div>
+    </div>
+  `
+  $("#guestsContainer").html(initialGuestHtml);
+}
+
+function addNameInput() {
+  if(numberOfGuests < 3 ) {
+    numberOfGuests++;
+    let guestHtml = `
+      <div class="form-group row">
+        <input id="name${numberOfGuests}" type="text" class="form-control col-10 mr-1 guest" placeholder="Name">
+      </div>    
+    `
+    $("#guestsContainer").append(guestHtml);
+  }
 
 }
