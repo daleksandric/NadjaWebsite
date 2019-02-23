@@ -126,15 +126,32 @@ hr {
 }
 /* ================ Customization - Photo Gallery ===================================================== */
 
+#gallery {
+    padding:0;
+}
+
+#gallery h1 {
+    padding-top: 200px;
+    color: white;
+}
+
 .gallery > div {
-    background-image: url('../images/backgrounds/rose-elena-501361-unsplash.jpg');
+    background-image: url('../images/backgrounds/rose-elena-501361-unsplash.png');
     background-size: cover;
+}
+
+.gallery-padding {
+    padding-bottom: 200px;
 }
 
 /* ================ Customization - Registry ========================================================== */
 
 .registry {
     background-color: #82a28f;
+}
+
+.registry {
+    padding: 75px 0 75px 0;
 }
 
 /* ================ Customization - RSVP ============================================================== */
