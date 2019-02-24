@@ -156,6 +156,8 @@ hr {
 
 /* ================ Customization - RSVP ============================================================== */
 
+
+
   p.line {
     margin: 0px auto 20px auto;
     color: #999;
@@ -181,6 +183,7 @@ hr {
     border: none;
   }
 
+
 /* Media Query */
 
 @media (max-width: 576px) {
@@ -203,12 +206,18 @@ hr {
         font-size: 2rem;
     }
 
+    .modal-body {
+        margin:auto;
+        padding: 0;
+    }
+
 }
 
 @media (max-width: 992px) {
     h1 {
         font-size: 3rem;
     }
+    
 
 }
 

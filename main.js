@@ -50,6 +50,10 @@ $(document).ready(function () {
         }
       }
     });
+
+    $('#exampleModal').on('hidden.bs.modal', function(e) {
+      clearInput();
+    })
 })
 
 var numberOfGuests = 0;
@@ -62,7 +66,6 @@ function sendEmail() {
     emailjs.send('gmail', 'template_wb4zzh5Z', templateParams)
         .then(function(response) {
           console.log('SUCCESS!', response.status, response.text);
-          clearInput();
         }, function(error) {
           console.log('FAILED...', error);
         });
@@ -124,7 +127,7 @@ function clearInput() {
 
   let initialGuestHtml = `
     <div class="form-group row">
-      <input id="name0" type="text" class="form-control col-10 mr-1 guest" placeholder="Name">
+      <input id="name0" type="text" class="form-control col-10 guest" placeholder="Name">
       <div class="btn btn-primary col-1 name-btn" onclick="javascript:addNameInput()"><span class="fas fa-user-plus"></span></div>
     </div>
   `
@@ -132,11 +135,11 @@ function clearInput() {
 }
 
 function addNameInput() {
-  if(numberOfGuests < 3 ) {
+  if(numberOfGuests < 1 ) {
     numberOfGuests++;
     let guestHtml = `
       <div class="form-group row">
-        <input id="name${numberOfGuests}" type="text" class="form-control col-10 mr-1 guest" placeholder="Name">
+        <input id="name${numberOfGuests}" type="text" class="form-control col-12 guest" placeholder="Name">
       </div>    
     `
     $("#guestsContainer").append(guestHtml);
