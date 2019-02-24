@@ -9,6 +9,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+body p {
+    color:#282828;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -75,6 +79,15 @@ hr {
     margin-right: 0PX;
 }
 /* ================ Customization - Getting Married ================================================== */
+
+.couple-names h2 {
+    color:#bad1c5;
+    position:absolute;   
+    top: 10%;
+    transform: translateY(-50%);
+    right: 15%;
+    left: 15%;
+}
 
 .getting-married {
     height: 95vh;

@@ -127,8 +127,8 @@ function clearInput() {
 
   let initialGuestHtml = `
     <div class="form-group row">
-      <input id="name0" type="text" class="form-control col-10 guest" placeholder="Name">
-      <div class="btn btn-primary col-1 name-btn" onclick="javascript:addNameInput()"><span class="fas fa-user-plus"></span></div>
+      <input type="text" class="form-control col-10 col-sm-10 guest" placeholder="Name" required>
+      <div class="btn btn-primary col-2 col-sm-2 name-btn" onclick="javascript:addNameInput()"><span class="fas fa-user-plus size"></span></div>
     </div>
   `
   $("#guestsContainer").html(initialGuestHtml);
