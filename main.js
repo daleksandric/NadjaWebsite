@@ -81,19 +81,13 @@ function getEmailParameters(inputValues) {
   <br>
   `;
 
-  if(numberOfGuests > 1) {
-    bodyText += `I'm bringing ${numberOfGuests} guests with me:`;
-
-    for (i=1; i<=numberOfGuests; i++) {
-      if(namesOfGuests[i].length > 0) {
-        bodyText += `<div style='margin-left:25px;'>${namesOfGuests[i]}</div>`;
-      }
-    }
+  if(numberOfGuests = 1) {
+    bodyText += `My plus one is ${namesOfGuests[1]}.<br>`;
   }
 
-  if(comment !== null && comment.length > 0) {
+  if(inputValues.comment !== null && inputValues.comment.length > 0) {
     bodyText += `<br>Additional comments:<br>
-        <i>${inputValues.comment}</i><br><br>`
+        <i>${inputValues.comment}</i><br>`
     ;
   }
 
@@ -135,8 +129,8 @@ function clearInput() {
 }
 
 function addNameInput() {
-  if(numberOfGuests < 1 ) {
-    numberOfGuests++;
+  if(numberOfGuests === 0 ) {
+    numberOfGuests = 1;
     let guestHtml = `
       <div class="form-group row">
         <input id="name${numberOfGuests}" type="text" class="form-control col-12 guest" placeholder="Name">

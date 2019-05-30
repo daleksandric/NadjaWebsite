@@ -224,15 +224,18 @@ hr {
         padding: 0;
     }
 
+    .couple-names h2 {
+        top:13%;
+    }
+
 }
 
 @media (max-width: 992px) {
     h1 {
         font-size: 3rem;
     }
-    
-
 }
+
 
 /*
 Extra small (xs) devices (portrait phones, less than 576px)
